@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Dicee</string>
     <string name="button_text">Roll</string>
-    <string name="life_text">-Lif</string>
+    <string name="life_text">-Life</string>
 </resources>
