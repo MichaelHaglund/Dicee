@@ -55,18 +55,19 @@
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:background="#2980b9"
+            android:background="#dfe6e9"
             android:text="@string/button_text"
-            android:textColor="@android:color/white" />
+            android:textColor="#2d3436" />
 
         <Button
             android:id="@+id/lifebutton"
             android:layout_width="86dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
-            android:background="#d63031"
+            android:background="#dfe6e9"
             android:elevation="0dp"
-            android:text="@string/life_text" />
+            android:text="@string/life_text"
+            android:textColor="#2d3436" />
 
         <ImageView
             android:id="@+id/lifeDie"
