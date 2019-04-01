@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public int i;
 
     // Sound Constants
-    private final int NR_OF_SIMUL_SOUNDS = 1;
+    private final int NR_OF_SIMULTANEOUS_SOUNDS = 1;
     private final float LEFT_VOLUME = 1.0f;
     private final float RIGHT_VOLUME = 1.0f;
     private final int NO_LOOP = 0;
@@ -28,22 +28,16 @@ public class MainActivity extends AppCompatActivity {
     private int mDiceSoundID;
 
 
-    //play method triggered by roll button
-    public void playDice(View view){
-        Log.d("Sound", "sound play");
-        mSoundPool.play(mDiceSoundID,LEFT_VOLUME,RIGHT_VOLUME,PRIORITY,NO_LOOP,NORMAL_PLAY_RATE);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //creates soundpool on startup
-        mSoundPool = new SoundPool(NR_OF_SIMUL_SOUNDS, AudioManager.STREAM_MUSIC, 0);
+        mSoundPool = new SoundPool(NR_OF_SIMULTANEOUS_SOUNDS, AudioManager.STREAM_MUSIC, 0);
 
         //Loads and get ID to identify sounds
-        mDiceSoundID = mSoundPool.load(getApplicationContext(),R.raw.dicesound , 1);
+        mDiceSoundID = mSoundPool.load(getApplicationContext(),R.raw.dicesound, 1);
 
 
         //sets up button for rolling the dice
@@ -73,31 +67,26 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.dice2,
                 R.drawable.dice1
         };
-
+        //
+        rollButton.setSoundEffectsEnabled(false);
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Log.d("Sound", "sound play");
+                mSoundPool.play(mDiceSoundID,LEFT_VOLUME,RIGHT_VOLUME,PRIORITY,NO_LOOP,NORMAL_PLAY_RATE);
                 Log.d("Dicee", "Ze button is good");
-
                 Random randomNumberGenrator = new Random();
-
                 int number = randomNumberGenrator.nextInt(6);
-
                 Log.d("Dicee"  , "Number is: " +number);
-
                 leftDice.setImageResource(diceArray[number]);
-
                 number = randomNumberGenrator.nextInt(6);
-
                 rightDice.setImageResource(diceArray[number]);
-
-                Log.d("Dicee" , "App has ran" +number);
-
+                Log.d("Dicee" , "App has ran " +number);
             }
 
 
         });
+        lifeButton.setSoundEffectsEnabled(false);
         lifeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
