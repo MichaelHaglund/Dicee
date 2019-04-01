@@ -57,7 +57,9 @@
             android:layout_centerInParent="true"
             android:background="#dfe6e9"
             android:text="@string/button_text"
-            android:textColor="#2d3436" />
+            android:textColor="#2d3436"
+            android:onClick="playDice"
+            />
 
         <Button
             android:id="@+id/lifebutton"

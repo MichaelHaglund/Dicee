@@ -1,5 +1,7 @@
 package humble.hf.dicee;
 
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +14,36 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public int i;
+
+    // Sound Constants
+    private final int NR_OF_SIMUL_SOUNDS = 1;
+    private final float LEFT_VOLUME = 1.0f;
+    private final float RIGHT_VOLUME = 1.0f;
+    private final int NO_LOOP = 0;
+    private final int PRIORITY = 0;
+    private final float NORMAL_PLAY_RATE = 1.0f;
+
+    //member var
+    private SoundPool mSoundPool;
+    private int mDiceSoundID;
+
+
+    //play method triggered by roll button
+    public void playDice(View view){
+        Log.d("Sound", "sound play");
+        mSoundPool.play(mDiceSoundID,LEFT_VOLUME,RIGHT_VOLUME,PRIORITY,NO_LOOP,NORMAL_PLAY_RATE);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //creates soundpool on startup
+        mSoundPool = new SoundPool(NR_OF_SIMUL_SOUNDS, AudioManager.STREAM_MUSIC, 0);
+
+        //Loads and get ID to identify sounds
+        mDiceSoundID = mSoundPool.load(getApplicationContext(),R.raw.dicesound , 1);
 
 
         //sets up button for rolling the dice
