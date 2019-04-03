@@ -18,12 +18,10 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/image_logo"
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/dicee_logo"
-            android:contentDescription="TODO" />
+            app:srcCompat="@drawable/little" />
     </RelativeLayout>
 
     <LinearLayout
