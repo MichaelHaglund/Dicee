@@ -2,4 +2,8 @@
     <string name="app_name">Dicee</string>
     <string name="button_text">Roll</string>
     <string name="life_text">-Life</string>
+    <string name="life_die">Amount of life left</string>
+    <string name="right_die">Right rolling die</string>
+    <string name="left_die">Left rolling die</string>
+    <string name="logo_descript">Little Mexico logo</string>
 </resources>

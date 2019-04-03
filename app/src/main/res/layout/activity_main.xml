@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/dicee_logo" />
+            app:srcCompat="@drawable/dicee_logo"
+            android:contentDescription="TODO" />
     </RelativeLayout>
 
     <LinearLayout
@@ -35,14 +36,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/dice2" />
+            app:srcCompat="@drawable/dice2"
+            android:contentDescription="@string/left_die"/>
 
         <ImageView
             android:id="@+id/image_rightDice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/dice1" />
+            app:srcCompat="@drawable/dice1"
+            android:contentDescription="@string/right_die"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -57,9 +60,7 @@
             android:layout_centerInParent="true"
             android:background="#dfe6e9"
             android:text="@string/button_text"
-            android:textColor="#2d3436"
-            android:onClick="playDice"
-            />
+            android:textColor="#2d3436" />
 
         <Button
             android:id="@+id/lifebutton"
@@ -77,7 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             app:srcCompat="@drawable/dice6"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            android:contentDescription="@string/life_die"/>
 
 
     </RelativeLayout>
